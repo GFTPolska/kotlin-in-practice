@@ -1,0 +1,30 @@
+[
+  '{{repeat(1000)}}',
+  {
+    id: '{{index(1000)}}',
+    firstName: '{{firstName()}}',
+    lastName: '{{surname()}}',
+    age: '{{integer(20, 65)}}',
+    gender: '{{gender()}}',
+    email: '{{email()}}',
+    phone: '+48 {{phone("xxx xxx xxx")}}',
+    address: '{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}',
+    startDate: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ssZ")}}',
+    salary: '{{floating(5000, 25000, 2)}}',
+    department: function () {
+  var departments = [
+  {'id': 1, 'name': "HR"},
+  {'id': 2, 'name': "IT"},
+  {'id': 3, 'name': "Finance"},
+  {'id': 4, 'name': "Management"},
+  {'id': 5, 'name': "R&D"}
+];
+  return departments[Math.floor((Math.random() * departments.length))];
+},
+  badges: [
+
+  '{{repeat(1,7)}}',
+  '{{random("rookie", "regular", "senior", "pro", "maven", "speaker", "top-performer")}}'
+]
+  }
+]
